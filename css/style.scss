@@ -1,24 +1,61 @@
 @charset "UTF-8";
-@import "normalize.scss";
-
-/* base▼
+@import "normalize.scss"; /* base▼
 ========================================================================== */
-ul{
+
+body {
+	box-sizing: border-box;
+}
+
+ul {
 	list-style: none;
 	padding-left: 0;
 }
 /* base▲
 ========================================================================== */
-
 /* ヘッダー▼
 ========================================================================== */
-.top-header{
+.top-header {
 	max-width: 1200px;
 	margin: auto;
-	.lang-nav{
+	font-size: 12px;
+	.lang-nav {
+		margin: 20px auto;
+		display: flex;
+		justify-content: flex-end;
+		li {
+			padding:0 1.5em;
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+			a:hover{
+				border-bottom: 1px solid #666;
+			}
+		}
+		li:first-child{
+			border-right: 1px solid #ccc;
+		}
+	}
+	.header-img{
+		text-align: center;
+		background: url("./image/img_logo_pc.png") no-repeat;
+	}
+	.global-nav{
+		ul{
 			display: flex;
-			justify-content: flex-end;
-			font-size: 
+			justify-content: space-around;
+			font-weight: bold;
+			font-size: 14px;
+			margin: 30px auto;
+		}
+	}
+	.slider{
+		img{
+			display: none;
+		}
+		.open{
+			display: block;
+		}
 	}
 }
 
@@ -26,11 +63,9 @@ ul{
 ========================================================================== */
 /* メイン▼
 ========================================================================== */
-
 /* メイン▲
 ========================================================================== */
 /* フッター▼
 ========================================================================== */
-
 /* フッター▲
 ========================================================================== */
