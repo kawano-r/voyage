@@ -395,7 +395,8 @@ template {
 
 /* base▼
 ========================================================================== */
-body {
+html {
+  font-size: 62.5%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -410,7 +411,7 @@ ul {
 .top-header {
   max-width: 1200px;
   margin: auto;
-  font-size: 12px; }
+  font-size: 1.2rem; }
   .top-header .lang-nav {
     margin: 20px auto;
     display: -webkit-box;
@@ -427,12 +428,15 @@ ul {
         text-decoration: none;
         color: #666; }
       .top-header .lang-nav li a:hover {
-        border-bottom: 1px solid #666; }
+        text-decoration: underline; }
     .top-header .lang-nav li:first-child {
       border-right: 1px solid #ccc; }
   .top-header .header-img {
-    text-align: center;
-    background: url("./image/img_logo_pc.png") no-repeat; }
+    margin: auto;
+    width: 186px;
+    height: 60px; }
+    .top-header .header-img .sm-img {
+      display: none; }
   .top-header .global-nav ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -442,7 +446,7 @@ ul {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     margin: 30px auto; }
   .top-header .slider img {
     display: none; }
@@ -453,6 +457,32 @@ ul {
 ========================================================================== */
 /* メイン▼
 ========================================================================== */
+.news {
+  width: 1200px;
+  margin: auto;
+  font-size: 1.4rem; }
+  .news .news-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+    .news .news-nav li {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc; }
+      .news .news-nav li a {
+        text-decoration: none;
+        text-align: center;
+        color: #333;
+        display: block;
+        width: 192px;
+        padding: 24px; }
+    .news .news-nav li:last-child {
+      border-right: none; }
+
 /* メイン▲
 ========================================================================== */
 /* フッター▼
