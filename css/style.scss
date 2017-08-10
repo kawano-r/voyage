@@ -1,17 +1,18 @@
 @charset "UTF-8";
 @import "normalize.scss"; /* base▼
 ========================================================================== */
-$md: 1119px;
+$md: 1199px;
 $sm: 459px;
 @mixin max($breakpoint) {
 	 @media screen and (max-width: $breakpoint){
 		@content;
 	}
 }
-
+*{
+	box-sizing: border-box;
+}
 html {
 	font-size: 62.5%;
-	box-sizing: border-box;
 }
 
 ul {
