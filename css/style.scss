@@ -1,7 +1,14 @@
 @charset "UTF-8";
-@import "normalize.scss";
-/* base▼
+@import "normalize.scss"; /* base▼
 ========================================================================== */
+$md: 1119px;
+$sm: 459px;
+@mixin max($breakpoint) {
+	 @media screen and (max-width: $breakpoint){
+		@content;
+	}
+}
+
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
@@ -15,15 +22,19 @@ ul {
 ========================================================================== */
 /* ヘッダー▼
 ========================================================================== */
+
 .top-header {
-	max-width: 1200px;
 	margin: auto;
 	font-size: 1.2rem;
 
 	.lang-nav {
+		max-width: 1200px;
 		margin: 20px auto;
 		display: flex;
 		justify-content: flex-end;
+		@include max($md) {
+			width: 100%;
+		}
 
 		li {
 			padding: 0 1.5em;
@@ -41,74 +52,167 @@ ul {
 		li:first-child {
 			border-right: 1px solid #ccc;
 		}
+		@include max($md) {
+			display: none;
+		}
 	}
 
 	.header-img {
 		margin: auto;
 		width: 186px;
 		height: 60px;
+		@include max($md) {
+			background: #434343;
+			width: 100%;
+			padding: 18px;
+			height: 25px;
+		}
+
+		.lg-img {
+			@include max($md) {
+				display: none;
+			}
+		}
 
 		.sm-img {
 			display: none;
+			@include max($md) {
+				display: block;
+				background: #434343;
+				margin: auto;
+			}
 		}
 	}
 
 	.global-nav {
+		position: relative;
+		@include max($md) {
+			display: none;
+		}
+
 		> ul {
+			max-width: 1200px;
 			display: flex;
 			justify-content: space-around;
 			font-weight: bold;
 			font-size: 1.4rem;
 			margin: 30px auto 0;
+			@include max($md) {
+				width: 100%;
+			}
 
 			> li {
 				box-sizing: border-box;
 				padding: 20px;
-				position: relative;
 
 				.discription {
 					position: absolute;
 					top: 56px;
-					width: 1000%;
-					height: 300px;
+					left: 0;
+					width: 100%;
+					height: 0;
 					padding: 30px;
 					background: #3f464c;
 					color: #dfe1e2;
+					display: none;
+					transition: height 0.5s;
 
-					>ul >li{
+					> ul > li {
 						display: flex;
 
 						.ttl-more {
 							width: 380px;
 							padding-right: 20px;
 							border-right: 1px solid #555;
-							> p {
-								display: inline;
+
+							> a {
+								position: relative;
+								text-decoration: none;
+
+								p {
+									display: inline-block;
+									color: #dfe1e2;
+									font-size: 1.8rem;
+									font-weight: normal;
+									margin: 0;
+								}
+
+								p:last-child {
+									font-size: 1.2rem;
+									margin: 0 0 30px 10px;
+									vertical-align: top;
+								}
 							}
-							img{
-								display: block;
-								width: 340px;
-								height: 160px;
+
+							> a::after {
+								position: absolute;
+								content: "";
+								background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
+								width: 0.5em;
+								height: 1em;
+								top: 10%;
+								margin-left: 2rem;
 							}
-							>div{
+
+							a {
+								img {
+									display: block;
+									width: 340px;
+									height: 160px;
+									transition: all 0.5s;
+								}
+							}
+
+							a::after {
+								background: none;
+							}
+
+							a:hover {
+								img {
+									opacity: 0.6;
+									transform: scale(1.1);
+								}
+							}
+
+							.int {
 								display: block;
 								margin-top: 20px;
 								width: 340px;
-								font-size: 1.3rem;
+								font-size: 1.2rem;
+								font-weight: normal;
 							}
 						}
-						>ul{
+
+						> ul {
 							box-sizing: border-box;
 							padding: 0 20px;
 							width: 380px;
 							border-right: 1px solid #555;
-							>li{
+
+							> li {
 								font-size: 1.3rem;
 								line-height: 2;
-								a{
+
+								a {
+									position: relative;
 									display: block;
+									padding: 5px;
 									color: #dfe1e2;
 									text-decoration: none;
+								}
+
+								a:hover {
+									background: #3d3d3d;
+								}
+
+								a::after {
+									position: absolute;
+									content: "";
+									background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
+									width: 0.5em;
+									height: 0.8em;
+									top: 40%;
+									right: 20px;
 								}
 							}
 						}
@@ -121,21 +225,29 @@ ul {
 				border-bottom: 5px solid #c83922;
 
 				.discription {
+					height: 300px;
 					display: block;
+					z-index: 999;
 				}
 			}
 		}
 	}
 
 	.slider {
+		max-width: 1200px;
+		margin: auto;
+		@include max($md) {
+			width: 100%;
+		}
+
 		ul {
 			margin: 0;
 
-			img {
+			li {
 				display: none;
 			}
 
-			.open {
+			.on {
 				display: block;
 			}
 		}
@@ -145,14 +257,23 @@ ul {
 ========================================================================== */
 /* メイン▼
 ========================================================================== */
+
 .news {
 	width: 1200px;
 	margin: auto;
 	font-size: 1.4rem;
-
+	@include max($md) {
+		width: 100%;
+	}
+	@include max($sm){
+	width: 90%;
+	}
 	.news-nav ul {
 		display: flex;
 		justify-content: space-around;
+		@include max($md) {
+			display: none;
+		}
 
 		li {
 			border-top: 1px solid #ccc;
@@ -174,7 +295,8 @@ ul {
 		}
 	}
 
-	ul {
+	.news-list,
+	.news-list:target {
 		display: none;
 
 		> li {
@@ -218,9 +340,20 @@ ul {
 				color: #54acd2;
 			}
 		}
+		@include max($md) {
+			li:first-child {
+				border-top: 1px solid #ccc;
+			}
+
+			.title {
+				display: block;
+				line-height: 1.5;
+				margin-top: 10px;
+			}
+		}
 	}
 
-	.all {
+	.news-list:target {
 		display: block;
 	}
 }
@@ -230,13 +363,27 @@ ul {
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
-
+	@include max($md) {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	@include max($sm){
+		width: 90%;
+	flex-wrap: wrap;
+	}
 	a {
 		text-decoration: none;
 		color: #333;
 
 		img {
 			transition: opacity 0.3s;
+			@include max($md) {
+				width: 95%;
+			}
+			@include max($sm){
+				width: 100%;
+			}
 		}
 
 		h2 {
@@ -256,6 +403,10 @@ ul {
 	P {
 		font-size: 1.4rem;
 		width: 585px;
+		@include max($md) {
+			width: 90%;
+			margin: 0;
+		}
 	}
 }
 
@@ -270,13 +421,24 @@ ul {
 		width: 1200px;
 		margin: 60px auto;
 		padding: 30px;
+		@include max($md) {
+			width: 100%;
+		}
 
 		h2 {
 			font-size: 4.2rem;
+			@include max($sm){
+			font-size: 3rem;
+			margin: 10px auto;
+			}
 		}
 
 		h3 {
 			font-size: 2rem;
+			@include max($sm){
+				font-size: 1.8rem;
+			font-weight: normal;
+			}
 		}
 
 		h3::after {
@@ -285,22 +447,36 @@ ul {
 			width: 2.5rem;
 			height: 3rem;
 			border-bottom: 1px solid #fff;
+			@include max($sm){
+			width: 2rem;
+			height: 2rem;
+			}
 		}
 
 		.intro {
 			font-size: 2.4rem;
 			font-weight: bold;
+			@include max($sm){
+				font-size: 1.6rem;
+			}
 		}
 
 		p {
 			font-size: 1.4rem;
 			line-height: 2;
+			@include max($sm){
+				font-size: 1.2rem;
+			}
 		}
 
 		.btn {
 			font-size: 1.4rem;
 			font-weight: bold;
 			margin: 20px 0 60px;
+			@include max($sm){
+				width: 90%;
+				margin: auto;
+			}
 
 			a {
 				display: block;
@@ -312,6 +488,11 @@ ul {
 				padding: 20px 60px;
 				border: 2px solid #fff;
 				transition: background-color 0.3s;
+				@include max($sm){
+					width: 90%;
+					text-align: center;
+					margin-left: -20px;
+				}
 			}
 
 			a::after {
@@ -320,7 +501,7 @@ ul {
 				width: 0.5em;
 				height: 1em;
 				background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
-				margin-left: 40px;
+				right: 40px;
 			}
 
 			a:hover {
@@ -342,6 +523,7 @@ ul {
 ========================================================================== */
 /* フッター▼
 ========================================================================== */
+
 .btm {
 	background: #f2f2f2;
 
@@ -365,20 +547,39 @@ ul {
 
 	.links {
 		padding-top: 50px;
-
 		ul {
 			width: 1200px;
 			margin: auto;
 			display: flex;
 			justify-content: space-between;
+			@include max($md) {
+				width: 100%;
+				flex-wrap: wrap;
+			}
 
 			li {
+				@include max($md) {
+					width: 50%;
+				}
+				@include max($sm){
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+				}
+
 				a {
 					text-decoration: none;
 					color: #333;
 
 					img {
+						display: block;
 						transition: opacity 0.3s;
+						@include max($md) {
+							width: 90%;
+						}
+						@include max($sm){
+							width: 80%;
+						}
 					}
 				}
 
@@ -398,7 +599,10 @@ ul {
 					font-size: 1.2rem;
 					line-height: 2;
 					width: 278px;
-
+					@include max($sm){
+						width: 100%;
+						font-size: 1rem;
+					}
 					a {
 						text-decoration: none;
 						color: #333;
@@ -417,15 +621,24 @@ ul {
 		align-items: center;
 		border-top: 1px solid #d3d3d3;
 		padding: 10px 0;
-
+		@include max($md) {
+			width: 90%;
+		}
+		@include max($sm) {
+			width: 100%;
+		}
 		ul {
 			display: flex;
 			justify-content: space-around;
-
+			@include max($sm) {
+				display: block;
+			}
 			li {
 				border-right: 1px solid #333;
 				padding: 0 2rem;
-
+				@include max($sm) {
+					border-right: none;
+				}
 				a {
 					font-size: 1.2rem;
 					line-height: 1.5;
