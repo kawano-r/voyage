@@ -27,10 +27,13 @@ ul {
 .top-header {
 	margin: auto;
 	font-size: 1.2rem;
+	@include max($md) {
+		background: #434343;
+	}
 
 	.lang-nav {
 		max-width: 1200px;
-		margin: 20px auto;
+		margin: 20px auto 0;
 		display: flex;
 		justify-content: flex-end;
 		@include max($md) {
@@ -38,7 +41,7 @@ ul {
 		}
 
 		li {
-			padding: 0 1.5em;
+			padding: 0 1.3em;
 
 			a {
 				text-decoration: none;
@@ -52,37 +55,33 @@ ul {
 
 		li:first-child {
 			border-right: 1px solid #ccc;
+			padding-left: 0;
+		}
+		li:last-child{
+			padding-right: 0;
 		}
 		@include max($md) {
 			display: none;
 		}
 	}
-
 	.header-img {
-		margin: auto;
-		width: 186px;
-		height: 60px;
+		margin:8px auto;
+		width: 172px;
+		height: 38px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: url("../image/img_logo_pc.png") center/100% no-repeat;
+		transition: opacity 0.5s;
 		@include max($md) {
-			background: #434343;
-			width: 100%;
-			padding: 18px;
-			height: 25px;
+			width: 110px;
+			margin: 0 auto;
+			padding: 30px 0;
+			background: #434343 url("../image/img_logo.png") center/100% no-repeat;
 		}
-
-		.lg-img {
-			@include max($md) {
-				display: none;
-			}
-		}
-
-		.sm-img {
-			display: none;
-			@include max($md) {
-				display: block;
-				background: #434343;
-				margin: auto;
-			}
-		}
+	}
+	.header-img:hover{
+		opacity: 0.6;
 	}
 
 	.global-nav {
@@ -93,18 +92,19 @@ ul {
 
 		> ul {
 			max-width: 1200px;
+			margin: 30px auto 10px;
 			display: flex;
 			justify-content: space-around;
 			font-weight: bold;
 			font-size: 1.4rem;
-			margin: 30px auto 0;
 			@include max($md) {
 				width: 100%;
 			}
 
 			> li {
-				box-sizing: border-box;
-				padding: 20px;
+				text-align: center;
+				width: 172px;
+				padding: 10px 10px 16px;
 
 				.discription {
 					position: absolute;
@@ -118,7 +118,7 @@ ul {
 					display: none;
 					transition: height 0.5s;
 
-					> ul > li {
+						> li {
 						display: flex;
 
 						.ttl-more {

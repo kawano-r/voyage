@@ -395,10 +395,12 @@ template {
 
 /* base▼
 ========================================================================== */
-html {
-  font-size: 62.5%;
+* {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
 
 ul {
   list-style: none;
@@ -411,9 +413,12 @@ ul {
 .top-header {
   margin: auto;
   font-size: 1.2rem; }
+  @media screen and (max-width: 1199px) {
+    .top-header {
+      background: #434343; } }
   .top-header .lang-nav {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 20px auto 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -422,48 +427,51 @@ ul {
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .top-header .lang-nav {
         width: 100%; } }
     .top-header .lang-nav li {
-      padding: 0 1.5em; }
+      padding: 0 1.3em; }
       .top-header .lang-nav li a {
         text-decoration: none;
         color: #666; }
       .top-header .lang-nav li a:hover {
         text-decoration: underline; }
     .top-header .lang-nav li:first-child {
-      border-right: 1px solid #ccc; }
-    @media screen and (max-width: 1119px) {
+      border-right: 1px solid #ccc;
+      padding-left: 0; }
+    .top-header .lang-nav li:last-child {
+      padding-right: 0; }
+    @media screen and (max-width: 1199px) {
       .top-header .lang-nav {
         display: none; } }
   .top-header .header-img {
-    margin: auto;
-    width: 186px;
-    height: 60px; }
-    @media screen and (max-width: 1119px) {
+    margin: 8px auto;
+    width: 172px;
+    height: 38px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: url("../image/img_logo_pc.png") center/100% no-repeat;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    @media screen and (max-width: 1199px) {
       .top-header .header-img {
-        background: #434343;
-        width: 100%;
-        padding: 18px;
-        height: 25px; } }
-    @media screen and (max-width: 1119px) {
-      .top-header .header-img .lg-img {
-        display: none; } }
-    .top-header .header-img .sm-img {
-      display: none; }
-      @media screen and (max-width: 1119px) {
-        .top-header .header-img .sm-img {
-          display: block;
-          background: #434343;
-          margin: auto; } }
+        width: 110px;
+        margin: 0 auto;
+        padding: 30px 0;
+        background: #434343 url("../image/img_logo.png") center/100% no-repeat; } }
+  .top-header .header-img:hover {
+    opacity: 0.6; }
   .top-header .global-nav {
     position: relative; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .top-header .global-nav {
         display: none; } }
     .top-header .global-nav > ul {
       max-width: 1200px;
+      margin: 30px auto 10px;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -472,15 +480,14 @@ ul {
       -ms-flex-pack: distribute;
       justify-content: space-around;
       font-weight: bold;
-      font-size: 1.4rem;
-      margin: 30px auto 0; }
-      @media screen and (max-width: 1119px) {
+      font-size: 1.4rem; }
+      @media screen and (max-width: 1199px) {
         .top-header .global-nav > ul {
           width: 100%; } }
       .top-header .global-nav > ul > li {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 20px; }
+        text-align: center;
+        width: 172px;
+        padding: 10px 10px 16px; }
         .top-header .global-nav > ul > li .discription {
           position: absolute;
           top: 56px;
@@ -494,29 +501,29 @@ ul {
           -webkit-transition: height 0.5s;
           -o-transition: height 0.5s;
           transition: height 0.5s; }
-          .top-header .global-nav > ul > li .discription > ul > li {
+          .top-header .global-nav > ul > li .discription > li {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex; }
-            .top-header .global-nav > ul > li .discription > ul > li .ttl-more {
+            .top-header .global-nav > ul > li .discription > li .ttl-more {
               width: 380px;
               padding-right: 20px;
               border-right: 1px solid #555; }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more > a {
+              .top-header .global-nav > ul > li .discription > li .ttl-more > a {
                 position: relative;
                 text-decoration: none; }
-                .top-header .global-nav > ul > li .discription > ul > li .ttl-more > a p {
+                .top-header .global-nav > ul > li .discription > li .ttl-more > a p {
                   display: inline-block;
                   color: #dfe1e2;
                   font-size: 1.8rem;
                   font-weight: normal;
                   margin: 0; }
-                .top-header .global-nav > ul > li .discription > ul > li .ttl-more > a p:last-child {
+                .top-header .global-nav > ul > li .discription > li .ttl-more > a p:last-child {
                   font-size: 1.2rem;
                   margin: 0 0 30px 10px;
                   vertical-align: top; }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more > a::after {
+              .top-header .global-nav > ul > li .discription > li .ttl-more > a::after {
                 position: absolute;
                 content: "";
                 background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
@@ -524,44 +531,44 @@ ul {
                 height: 1em;
                 top: 10%;
                 margin-left: 2rem; }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more a img {
+              .top-header .global-nav > ul > li .discription > li .ttl-more a img {
                 display: block;
                 width: 340px;
                 height: 160px;
                 -webkit-transition: all 0.5s;
                 -o-transition: all 0.5s;
                 transition: all 0.5s; }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more a::after {
+              .top-header .global-nav > ul > li .discription > li .ttl-more a::after {
                 background: none; }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more a:hover img {
+              .top-header .global-nav > ul > li .discription > li .ttl-more a:hover img {
                 opacity: 0.6;
                 -webkit-transform: scale(1.1);
                 -ms-transform: scale(1.1);
                 transform: scale(1.1); }
-              .top-header .global-nav > ul > li .discription > ul > li .ttl-more .int {
+              .top-header .global-nav > ul > li .discription > li .ttl-more .int {
                 display: block;
                 margin-top: 20px;
                 width: 340px;
                 font-size: 1.2rem;
                 font-weight: normal; }
-            .top-header .global-nav > ul > li .discription > ul > li > ul {
+            .top-header .global-nav > ul > li .discription > li > ul {
               -webkit-box-sizing: border-box;
               box-sizing: border-box;
               padding: 0 20px;
               width: 380px;
               border-right: 1px solid #555; }
-              .top-header .global-nav > ul > li .discription > ul > li > ul > li {
+              .top-header .global-nav > ul > li .discription > li > ul > li {
                 font-size: 1.3rem;
                 line-height: 2; }
-                .top-header .global-nav > ul > li .discription > ul > li > ul > li a {
+                .top-header .global-nav > ul > li .discription > li > ul > li a {
                   position: relative;
                   display: block;
                   padding: 5px;
                   color: #dfe1e2;
                   text-decoration: none; }
-                .top-header .global-nav > ul > li .discription > ul > li > ul > li a:hover {
+                .top-header .global-nav > ul > li .discription > li > ul > li a:hover {
                   background: #3d3d3d; }
-                .top-header .global-nav > ul > li .discription > ul > li > ul > li a::after {
+                .top-header .global-nav > ul > li .discription > li > ul > li a::after {
                   position: absolute;
                   content: "";
                   background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
@@ -579,7 +586,7 @@ ul {
   .top-header .slider {
     max-width: 1200px;
     margin: auto; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .top-header .slider {
         width: 100%; } }
     .top-header .slider ul {
@@ -597,7 +604,7 @@ ul {
   width: 1200px;
   margin: auto;
   font-size: 1.4rem; }
-  @media screen and (max-width: 1119px) {
+  @media screen and (max-width: 1199px) {
     .news {
       width: 100%; } }
   @media screen and (max-width: 459px) {
@@ -611,7 +618,7 @@ ul {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .news .news-nav ul {
         display: none; } }
     .news .news-nav ul li {
@@ -674,7 +681,7 @@ ul {
       .news .news-list > li a:hover,
       .news .news-list:target > li a:hover {
         color: #54acd2; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .news .news-list li:first-child,
       .news .news-list:target li:first-child {
         border-top: 1px solid #ccc; }
@@ -697,7 +704,7 @@ ul {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  @media screen and (max-width: 1119px) {
+  @media screen and (max-width: 1199px) {
     .about-company {
       width: 100%;
       display: -webkit-box;
@@ -720,7 +727,7 @@ ul {
       -webkit-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      @media screen and (max-width: 1119px) {
+      @media screen and (max-width: 1199px) {
         .about-company a img {
           width: 95%; } }
       @media screen and (max-width: 459px) {
@@ -736,7 +743,7 @@ ul {
   .about-company P {
     font-size: 1.4rem;
     width: 585px; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .about-company P {
         width: 90%;
         margin: 0; } }
@@ -753,7 +760,7 @@ ul {
     width: 1200px;
     margin: 60px auto;
     padding: 30px; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .recruit-wrap .recruit,
       .recruit-wrap .service,
       .service-wrap .recruit,
@@ -917,13 +924,13 @@ ul {
       -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
       justify-content: space-between; }
-      @media screen and (max-width: 1119px) {
+      @media screen and (max-width: 1199px) {
         .btm .links ul {
           width: 100%;
           -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
           flex-wrap: wrap; } }
-      @media screen and (max-width: 1119px) {
+      @media screen and (max-width: 1199px) {
         .btm .links ul li {
           width: 50%; } }
       @media screen and (max-width: 459px) {
@@ -945,7 +952,7 @@ ul {
           -webkit-transition: opacity 0.3s;
           -o-transition: opacity 0.3s;
           transition: opacity 0.3s; }
-          @media screen and (max-width: 1119px) {
+          @media screen and (max-width: 1199px) {
             .btm .links ul li a img {
               width: 90%; } }
           @media screen and (max-width: 459px) {
@@ -986,7 +993,7 @@ ul {
     align-items: center;
     border-top: 1px solid #d3d3d3;
     padding: 10px 0; }
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: 1199px) {
       .btm .footer-nav {
         width: 90%; } }
     @media screen and (max-width: 459px) {
