@@ -83,6 +83,9 @@ ul {
 			padding: 30px 0;
 			background: #434343 url("../image/img_logo.png") center/100% no-repeat;
 		}
+		@include max($sm) {
+			margin-left: 20px;
+		}
 	}
 
 	.header-img:hover {
@@ -172,6 +175,7 @@ ul {
 									margin-top: 14px;
 									width: 374px;
 									height: 140px;
+									background: #fff;
 									transition: all 0.5s;
 								}
 							}
@@ -266,7 +270,7 @@ ul {
 		width: 93%;
 	}
 	@include max($sm) {
-		width: 93%;
+		width: 90%;
 	}
 
 	.tab-control {
@@ -342,6 +346,13 @@ ul {
 				.news-type-ir {
 					background: #c99;
 				}
+				.news-type-info,
+				.news-type-publicity {
+					background: #99cccc;
+				}
+				.news-type-seminer {
+					background: #999acc;
+				}
 			}
 
 			a:hover {
@@ -363,6 +374,10 @@ ul {
 				display: block;
 				line-height: 1.5;
 				margin-top: 10px;
+				@include max($sm) {
+					font-size: 1.2rem;
+					line-height: 1.8;
+				}
 			}
 		}
 	}
@@ -397,16 +412,23 @@ ul {
 		width: 93%;
 	}
 	@include max($sm) {
-		width: 93%;
-		flex-wrap: wrap;
+		width: 90%;
+		display: block;
+		margin-bottom: 40px;
 	}
 
-	>div {
+	> div {
+		color: #333;
 		font-size: 1.4rem;
 		line-height: 2;
 		width: 585px;
 		@include max($md) {
 			width: 48.8%;
+		}
+		@include max($sm) {
+			width: 100%;
+			font-size: 1.3rem;
+			margin-bottom: 20px;
 		}
 
 		a {
@@ -429,6 +451,9 @@ ul {
 				margin: 0;
 				@include max($md) {
 					font-size: 2rem;
+				}
+				@include max($sm) {
+					font-size: 1.8rem;
 				}
 			}
 		}
@@ -459,6 +484,11 @@ ul {
 			padding-left: 30px;
 			margin-top: 30px;
 		}
+		@include max($sm) {
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-top: 0;
+		}
 
 		h2 {
 			font-family: 'Oswald', sans-serif;
@@ -466,8 +496,8 @@ ul {
 			font-weight: normal;
 			margin-bottom: 0;
 			@include max($sm) {
-				font-size: 3rem;
-				margin: 10px;
+				font-size: 4rem;
+				margin-top: 10px;
 			}
 		}
 
@@ -476,6 +506,9 @@ ul {
 			font-weight: normal;
 			@include max($md) {
 				font-size: 1.9rem;
+			}
+			@include max($sm) {
+				font-size: 1.8rem;
 			}
 		}
 
@@ -490,22 +523,37 @@ ul {
 			}
 		}
 
-		p {
-			margin-top: 0;
-			font-size: 1.4rem;
-			line-height: 2;
-			@include max($md) {
-				font-size: 1.3rem;
+		.intro {
+			margin: 40px auto 20px;
+
+			p {
+				margin: 0 auto;
+				font-size: 2.4rem;
+				font-weight: bold;
+				line-height: 1.8;
+				@include max($md) {
+					font-size: 1.8rem;
+				}
+				@include max($sm) {
+					display: inline;
+				}
 			}
 		}
 
-		.intro {
-			margin-top: 40px;
-			font-size: 2.4rem;
-			font-weight: bold;
-			line-height: 1.7;
-			@include max($md) {
-				font-size: 1.8rem;
+		.whats {
+			@include max($sm) {
+				margin-bottom: 20px;
+			}
+			p {
+				margin: 0 auto;
+				font-size: 1.4rem;
+				line-height: 2;
+				@include max($md) {
+					font-size: 1.3rem;
+				}
+				@include max($sm) {
+					display: inline;
+				}
 			}
 		}
 
@@ -514,8 +562,8 @@ ul {
 			font-weight: bold;
 			margin: 20px 0 60px;
 			@include max($sm) {
-				width: 90%;
-				margin: auto;
+				width: 100%;
+				margin-bottom: 30px;
 			}
 
 			a {
@@ -529,9 +577,8 @@ ul {
 				border: 2px solid #fff;
 				transition: background-color 0.3s;
 				@include max($sm) {
-					width: 90%;
+					width: 100%;
 					text-align: center;
-					margin-left: -20px;
 				}
 			}
 
@@ -563,7 +610,6 @@ ul {
 ========================================================================== */
 /* フッター▼
 ========================================================================== */
-
 .btm {
 	background: #f2f2f2;
 
@@ -588,6 +634,9 @@ ul {
 	.links {
 		padding-top: 56px;
 		color: #343434;
+		@include max($sm){
+			padding-top: 0;
+		}
 
 		ul {
 			width: 1200px;
@@ -601,12 +650,15 @@ ul {
 
 			li {
 				@include max($md) {
-					width: 48%;
+					width: 100%;
 				}
 				@include max($sm) {
 					width: 100%;
 					display: flex;
 					justify-content: space-between;
+					align-items: stretch;
+					padding: 22px 0;
+					border-bottom: 1px solid #dedede;
 				}
 
 				a {
@@ -617,7 +669,7 @@ ul {
 						display: block;
 						transition: opacity 0.3s;
 						@include max($md) {
-							width: 100%;
+							width: 90%;
 						}
 					}
 				}
@@ -632,6 +684,11 @@ ul {
 
 				.info {
 					margin: 20px 0;
+					@include max($sm){
+						width: 70%;
+						margin-top: 5px;
+					}
+
 
 					.name {
 						font-size: 1.4rem;
@@ -645,6 +702,9 @@ ul {
 						@include max($md) {
 							width: 100%;
 						}
+						@include max($sm){
+							font-size: 1rem;
+						}
 					}
 
 					.to-account {
@@ -654,6 +714,9 @@ ul {
 							padding-left: 2rem;
 							text-decoration: none;
 							color: #333;
+							@include max($sm){
+								padding-left: 1.2rem;
+							}
 						}
 
 						a:before {
@@ -688,6 +751,13 @@ ul {
 		@include max($md) {
 			width: 93%;
 		}
+		@include max($sm){
+			background: #343434;
+			color: #fff;
+			display: block;
+			width: 100%;
+			padding-top: 0;
+		}
 
 		ul {
 			display: flex;
@@ -695,6 +765,7 @@ ul {
 			align-items: baseline;
 			@include max($sm) {
 				display: block;
+				margin-top: 0;
 			}
 
 			li {
@@ -702,6 +773,8 @@ ul {
 				padding: 0 1.5rem;
 				@include max($sm) {
 					border-right: none;
+					border-bottom: 1px solid #484848;
+
 				}
 
 				a {
@@ -709,15 +782,37 @@ ul {
 					line-height: 1.3;
 					text-decoration: none;
 					color: #333;
+					@include max($sm){
+						position: relative;
+						display: block;
+						font-size: 1.3rem;
+						color: #fff;
+						padding: 17px 0;
+					}
+
 				}
 
 				a:hover {
 					text-decoration: underline;
 				}
+				a:after{
+					@include max($sm){
+						position: absolute;
+						content: "";
+						width: 0.6em;
+						height: 1em;
+						background: url("../image/ico_arrow_white_right.png") center/cover no-repeat;
+						right: 0px;
+					}
+				}
 			}
 
 			li:first-child {
 				padding-left: 0;
+				@include max($sm){
+					padding-left: 1.5rem;
+				}
+
 			}
 
 			li:last-child {
@@ -728,6 +823,12 @@ ul {
 		.copyright {
 			color: #919191;
 			font-size: 1.1rem;
+			@include max($sm){
+				color: #fff;
+				text-align: center;
+				font-size: 0.9rem;
+				padding: 10px 0;
+			}
 		}
 	}
 }
