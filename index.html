@@ -11,7 +11,7 @@
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
 	<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+	<link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,6 +22,21 @@
 			<li><a href="#">English</a></li>
 		</ul>
 		<a href="#"><h1 class="header-img">VOYAGE GROUP</h1></a>
+
+		<div class="small-menu">
+			<a class="menu-btn" href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			<div class="small-ttl">企業情報</div>
+			<div class="small-ttl">ニュース</div>
+			<div class="small-ttl">事業紹介</div>
+			<div class="small-ttl">テクノロジー</div>
+			<div class="small-ttl">カルチャー</div>
+			<div class="small-ttl">株主・投資家の皆様へ</div>
+			<div class="small-ttl">採用情報</div>
+		</div>
 
 		<nav class="global-nav">
 			<ul>
@@ -182,11 +197,11 @@
 				</li>
 			</ul>
 		</nav>
-		<!-- <ul class="slider">
+		<ul class="slider">
 			<li><img src="image/img_slider_01.jpg" alt=""></li>
 			<li><img src="image/img_slider_02.jpg" alt=""></li>
 			<li><img src="image/img_slider_03.jpg" alt=""></li>
-		</ul> -->
+		</ul>
 	</header>
 
 	<main>
@@ -339,7 +354,7 @@
 						<a href="">
 							<div class="name">インスタグラム</div>
 						</a>
-						<div class="txt to-account"><a href="//voyagegroup.com/company/social-media/">弊社公式アカウント一覧</a></div>
+						<div class="txt to-account"><a href="https://voyagegroup.com/company/social-media/">弊社公式アカウント一覧</a></div>
 					</div>
 				</li>
 			</ul>
@@ -347,19 +362,23 @@
 
 		<nav class="footer-nav">
 			<ul>
-				<li><a href="//voyagegroup.com/sitemap/">サイトマップ</a></li>
-				<li><a href="//voyagegroup.com/privacy-policy/">プライバシーポリシー</a></li>
-				<li><a href="//voyagegroup.com/contact/">お問い合わせ</a></li>
+				<li><a href="https://voyagegroup.com/sitemap/">サイトマップ</a></li>
+				<li><a href="https://voyagegroup.com/privacy-policy/">プライバシーポリシー</a></li>
+				<li><a href="https://voyagegroup.com/contact/">お問い合わせ</a></li>
 			</ul>
-			<div class="copyright">© 2016 VOYAGE GROUP Inc.</div>
+			<div class="copyright">&copy; 2016 VOYAGE GROUP Inc.</div>
 		</nav>
 
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<script>
-		$('.slider').slick({
+		$(".menu-btn").on("click", function() {
+			$(this).toggleClass("active");
+		});
+
+		$(".slider").slick({
 			dots: true,
 		});
 	</script>
