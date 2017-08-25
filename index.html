@@ -11,16 +11,11 @@
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
 	<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-	<link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<header class="top-header">
-		<ul class="lang-nav">
-			<li>日本語</li>
-			<li><a href="#">English</a></li>
-		</ul>
 		<a href="#"><h1 class="header-img">VOYAGE GROUP</h1></a>
 
 		<div class="small-menu">
@@ -29,13 +24,19 @@
 				<span></span>
 				<span></span>
 			</a>
-			<div class="small-ttl">企業情報</div>
-			<div class="small-ttl">ニュース</div>
-			<div class="small-ttl">事業紹介</div>
-			<div class="small-ttl">テクノロジー</div>
-			<div class="small-ttl">カルチャー</div>
-			<div class="small-ttl">株主・投資家の皆様へ</div>
-			<div class="small-ttl">採用情報</div>
+			<ul>
+				<li><a href="">企業情報</a></li>
+				<li><a href="">ニュース</a></li>
+				<li><a href="">事業紹介</a></li>
+				<li><a href="">テクノロジー</a></li>
+				<li><a href="">カルチャー</a></li>
+				<li><a href="">株主・投資家の皆様へ</a></li>
+				<li><a href="">採用情報</a></li>
+			</ul>
+			<ul class="lang-nav">
+				<li>日本語</li>
+				<li><a href="#">English</a></li>
+			</ul>
 		</div>
 
 		<nav class="global-nav">
@@ -371,14 +372,15 @@
 
 	</footer>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<script>
 		$(".menu-btn").on("click", function() {
 			$(this).toggleClass("active");
 		});
 
-		$(".slider").slick({
+		$('.slider').slick({
+			autoplay: true,
 			dots: true,
 		});
 	</script>
