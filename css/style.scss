@@ -27,13 +27,41 @@ ul {
 ========================================================================== */
 /* ヘッダー▼
 ========================================================================== */
-
 .top-header {
 	position: relative;
 	margin: auto;
 	font-size: 1.2rem;
 	@include max($md) {
 		background: #434343;
+	}
+
+	.lang-nav {
+		max-width: 1200px;
+		margin: 20px auto 0;
+		display: flex;
+		justify-content: flex-end;
+		@include max($md) {
+			display: none;
+		}
+
+		li {
+			padding: 0 1.3em;
+
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+		}
+		li:first-child {
+			border-right: 1px solid #ccc;
+			padding-left: 0;
+		}
+		li:last-child{
+			padding-right: 0;
+		}
 	}
 
 	.header-img {
@@ -62,9 +90,10 @@ ul {
 
 	.small-menu {
 		display: none;
-		@include max($md){
+		@include max($md) {
 			display: block;
 		}
+
 		.menu-btn {
 			width: 16px;
 			height: 20px;
@@ -114,7 +143,8 @@ ul {
 			}
 		}
 	}
-	.lang-nav {
+
+	.small-lang-nav {
 		position: absolute;
 		margin: 20px auto 0;
 		display: flex;
@@ -148,11 +178,12 @@ ul {
 
 			a:hover {
 				text-decoration: underline;
-				@include max($md){
+				@include max($md) {
 					text-decoration: none;
 				}
 			}
-			a:after{
+
+			a:after {
 				visibility: hidden;
 			}
 		}
@@ -167,7 +198,8 @@ ul {
 
 		li:last-child {
 			padding: 0;
-			a{
+
+			a {
 				background: #434343;
 			}
 		}
@@ -186,7 +218,8 @@ ul {
 			transform: translateY(-4px) rotate(45deg);
 		}
 	}
-	.menu-btn.active ~ ul{
+
+	.menu-btn.active ~ ul {
 		position: absolute;
 		background: #434343;
 		display: block;
@@ -365,7 +398,6 @@ ul {
 ========================================================================== */
 /* メイン▼
 ========================================================================== */
-
 .news {
 	width: 1200px;
 	margin: 70px auto 0;
@@ -717,6 +749,7 @@ ul {
 ========================================================================== */
 /* フッター▼
 ========================================================================== */
+
 .btm {
 	background: #f2f2f2;
 
